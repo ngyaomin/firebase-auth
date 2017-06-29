@@ -12,7 +12,7 @@ class SignInForm extends Component {
     try {
       await axios.post(`${ROOT_URL}/verifyOneTimePassword`, {
         phone: this.state.phone, code: this.state.code
-      })
+      });
     } catch (err) {
       console.log(err);
     }
@@ -21,7 +21,7 @@ class SignInForm extends Component {
   render() {
     return (
       <View>
-        <View style={{ marginBottom: 10  }}>
+        <View style={{ marginBottom: 10 }}>
           <FormLabel>
             Enter Phone Number
           </FormLabel>
@@ -31,7 +31,7 @@ class SignInForm extends Component {
           />
         </View>
 
-        <View style={{ marginBottom: 10  }}>
+        <View style={{ marginBottom: 10 }}>
           <FormLabel>
             Enter your code
           </FormLabel>
@@ -41,7 +41,7 @@ class SignInForm extends Component {
           />
         </View>
 
-        <Button onPress={this.handleSubmit}  title="Submit" />
+        <Button onPress={this.handleSubmit} title="Submit" />
       </View>
     );
   }
